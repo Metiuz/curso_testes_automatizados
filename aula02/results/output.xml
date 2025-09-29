@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.6 on win32)" generated="2025-08-25T12:00:44.455825" rpa="false" schemaversion="5">
+<suite id="s1" name="Aula02" source="C:\Users\Matheus\Downloads\Backup para formatação\curso_teste_automatizado\aula02">
+<suite id="s1-s1" name="001" source="C:\Users\Matheus\Downloads\Backup para formatação\curso_teste_automatizado\aula02\001.robot">
+<test id="s1-s1-t1" name="TC003 - Realizar compra com baixa performance" line="103">
+<kw name="Abrir navegador" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:44.752460" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-25T12:00:44.752460" elapsed="5.200525"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-25T12:00:49.952985" elapsed="0.270258"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:44.752460" elapsed="5.471794"/>
+</kw>
+<kw name="Realizar login com ${LOGINPAGE.LOGIN_PERFORMANCE} e ${LOGINPAGE.SENHA}" source_name="Realizar login com ${USERNAME} e ${PASSWORD}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${LOGINPAGE.INPUT_LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.225263" elapsed="0.015272"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:50.242038" level="INFO">Typing text 'performance_glitch_user' into text field 'id:user-name'.</msg>
+<arg>locator=${LOGINPAGE.INPUT_LOGIN}</arg>
+<arg>text=${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.240535" elapsed="0.045843"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${LOGINPAGE.INPUT_SENHA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.286378" elapsed="0.006764"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:50.294278" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>locator=${LOGINPAGE.INPUT_SENHA}</arg>
+<arg>text=${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.293142" elapsed="0.015138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${LOGINPAGE.SUBMIT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.308280" elapsed="0.007000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:50.316321" level="INFO">Clicking element 'id:login-button'.</msg>
+<arg>locator=${LOGINPAGE.SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:50.315280" elapsed="5.126753"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:50.224254" elapsed="5.217779"/>
+</kw>
+<kw name="Verificar se conseguiu realizar o login corretamente">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:55.444731" level="INFO">${CURURL} = https://www.saucedemo.com/v1/inventory.html</msg>
+<var>${CURURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.443442" elapsed="0.001289"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>container=${CURURL}</arg>
+<arg>item=/inventory.html</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.444731" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:55.442033" elapsed="0.002698"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUYPAGE.PRIMEIRO_PRODUTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.445877" elapsed="0.006932"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:55.453818" level="INFO">Clicking element 'xpath://*[@id="inventory_container"]/div/div[1]/div[3]/button'.</msg>
+<arg>locator=${BUYPAGE.PRIMEIRO_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.453818" elapsed="0.057094"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUYPAGE.SEGUNDO_PRODUTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.511912" elapsed="0.006539"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:55.519457" level="INFO">Clicking element 'xpath://*[@id="inventory_container"]/div/div[2]/div[3]/button'.</msg>
+<arg>locator=${BUYPAGE.SEGUNDO_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.519457" elapsed="0.056487"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUYPAGE.BOTAO_CARRINHO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.576966" elapsed="0.006212"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:55.584198" level="INFO">Clicking element 'xpath://*[@id="shopping_cart_container"]/a'.</msg>
+<arg>locator=${BUYPAGE.BOTAO_CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.583178" elapsed="0.184914"/>
+</kw>
+<kw name="Verificar se acessou carrinho">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:55.775230" level="INFO">${CURURL} = https://www.saucedemo.com/v1/cart.html</msg>
+<var>${CURURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.769595" elapsed="0.005635"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>container=${CURURL}</arg>
+<arg>item=/cart.html</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.775230" elapsed="0.001040"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:55.769595" elapsed="0.006675"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-25T12:00:59.776366" level="INFO">Slept 4 seconds.</msg>
+<arg>time_=4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-25T12:00:55.776270" elapsed="4.000096"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CARPAGE.CHECKOUT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.776366" elapsed="0.008067"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.785465" level="INFO">Clicking element 'xpath://*[@id="cart_contents_container"]/div/div[2]/a[2]'.</msg>
+<arg>locator=${CARPAGE.CHECKOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.784433" elapsed="0.050497"/>
+</kw>
+<kw name="Verificar se acessou checkout">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.837734" level="INFO">${CURURL} = https://www.saucedemo.com/v1/checkout-step-one.html</msg>
+<var>${CURURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.835928" elapsed="0.001806"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>container=${CURURL}</arg>
+<arg>item=/checkout-step-one.html</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.838236" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:59.834930" elapsed="0.003306"/>
+</kw>
+<kw name="Realizar checkout com ${NOME}, ${SOBRENOME} e {CEP}" source_name="Realizar checkout com ${firstname}, ${lastname} e {cep}">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CHECKOUTPAGE.NOME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.839271" elapsed="0.008310"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.848583" level="INFO">Typing text 'Matheus' into text field 'id:first-name'.</msg>
+<arg>locator=${CHECKOUTPAGE.NOME}</arg>
+<arg>text=${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.847581" elapsed="0.016957"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CHECKOUTPAGE.SOBRENOME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.864538" elapsed="0.007244"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.872797" level="INFO">Typing text 'Rangel Ribeiro' into text field 'id:last-name'.</msg>
+<arg>locator=${CHECKOUTPAGE.SOBRENOME}</arg>
+<arg>text=${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.871782" elapsed="0.014267"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CHECKOUTPAGE.CEP}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.886049" elapsed="0.006156"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.893219" level="INFO">Typing text '26185570' into text field 'id:postal-code'.</msg>
+<arg>locator=${CHECKOUTPAGE.CEP}</arg>
+<arg>text=${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.892205" elapsed="0.009799"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CHECKOUTPAGE.CONTINUE_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.903006" elapsed="0.005569"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:00:59.909581" level="INFO">Clicking element 'xpath://*[@id="checkout_info_container"]/div/form/div[2]/input'.</msg>
+<arg>locator=${CHECKOUTPAGE.CONTINUE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.909581" elapsed="0.040818"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:00:59.839271" elapsed="0.111128"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-25T12:01:01.952054" level="INFO">Slept 2 seconds.</msg>
+<arg>time_=2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-25T12:00:59.951903" elapsed="2.000151"/>
+</kw>
+<kw name="Verificar se acessou checkout 2">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:01:01.954193" level="INFO">${CURURL} = https://www.saucedemo.com/v1/checkout-step-two.html</msg>
+<var>${CURURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-08-25T12:01:01.953187" elapsed="0.001006"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>container=${CURURL}</arg>
+<arg>item=/checkout-step-two.html</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T12:01:01.954193" elapsed="0.001022"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:01:01.952054" elapsed="0.003161"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${CHECKOUTPAGE.FINISH_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T12:01:01.955215" elapsed="0.006636"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:01:01.962893" level="INFO">Clicking element 'xpath:/html/body/div/div[2]/div[3]/div/div[2]/div[8]/a[2]'.</msg>
+<arg>locator=${CHECKOUTPAGE.FINISH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T12:01:01.961851" elapsed="0.038096"/>
+</kw>
+<kw name="Verificar se comprou com sucesso">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-08-25T12:01:02.003523" level="INFO">${CURURL} = https://www.saucedemo.com/v1/checkout-complete.html</msg>
+<var>${CURURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-08-25T12:01:02.001012" elapsed="0.003831"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>container=${CURURL}</arg>
+<arg>item=/checkout-complete.html</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T12:01:02.004843" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T12:01:01.999947" elapsed="0.004896"/>
+</kw>
+<tag>Tarefa001</tag>
+<status status="PASS" start="2025-08-25T12:00:44.749938" elapsed="17.254905"/>
+</test>
+<status status="PASS" start="2025-08-25T12:00:44.482101" elapsed="17.525838"/>
+</suite>
+<status status="PASS" start="2025-08-25T12:00:44.458839" elapsed="17.552113"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Tarefa001</stat>
+</tag>
+<suite>
+<stat name="Aula02" id="s1" pass="1" fail="0" skip="0">Aula02</stat>
+<stat name="001" id="s1-s1" pass="1" fail="0" skip="0">Aula02.001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
